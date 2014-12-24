@@ -3,3 +3,15 @@
 name = "roceutils"
 version = "0.0.1"
 authors = ["Rob Weir <rweir@ertius.org>"]
+
+[dependencies]
+rustc-serialize = "0.1.0"
+
+[dependencies.docopt]
+
+git = "https://github.com/docopt/docopt.rs.git"
+
+
+[dependencies.docopt_macros]
+
+git = "https://github.com/docopt/docopt.rs"
