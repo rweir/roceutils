@@ -1,0 +1,5 @@
+[package]
+
+name = "roceutils"
+version = "0.0.1"
+authors = ["Rob Weir <rweir@ertius.org>"]
