@@ -15,11 +15,18 @@ Usage: ls [<path>...]
 fn main() {
     let args: Args = Args::docopt().decode().unwrap_or_else(|e| e.exit());
     println!("Just got {}", args.arg_path);
-    let dir = Path::new(".");
-    let contents = fs::readdir(&dir);
-    match contents {
-        Ok(results) => { process(results); }
-        Err(e) => ()
+    let dirs = match args.arg_path.len() {
+        0 => Vec::new(),
+        _ => args.arg_path
+    };
+    println!("And then got {}", dirs);
+    for dir in dirs.iter() {
+        let path = Path::new(dir);
+        let contents = fs::readdir(&path);
+        match contents {
+            Ok(results) => { process(results); }
+            Err(e) => ()
+        }
     }
 }
 
