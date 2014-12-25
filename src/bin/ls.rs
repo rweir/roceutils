@@ -10,6 +10,10 @@ use docopt::Docopt;
 
 docopt!(Args deriving Show, "
 Usage: ls [<path>...]
+       ls --help
+
+Options:
+    -h, --help         Show this message.
 ");
 
 fn main() {
